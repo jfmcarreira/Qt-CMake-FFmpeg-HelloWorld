@@ -5,7 +5,7 @@ A Simple Qt5 Program Built with CMake 3.8.2 that uses FFmpeg as dependency
 
 ## Building
 
-### MinGW 
+### MinGW
 From the command line, you'll probably have to tell CMake where to find Qt and to use MinGW instead of MSVC. You'll probably want something along the lines of:
 
 ```
@@ -36,5 +36,15 @@ CMake Command Line, Visual Studio 2015, Clang 4.0.1, Qt 5.9.1, 64 bit: Run vcvar
 >cmake -DCMAKE_PREFIX_PATH="path/to/Qt5/lib/cmake" -G"Visual Studio 14 2015 Win64" -T"LLVM-vs2014" path/to/source
 ```
 
-### Everything Else 
+### Everything Else
 Everything else is untested. Submissions welcome.
+
+
+### Run
+
+```
+./helloworld <file_name_to_parse_with_ffmpeg>
+```
+
+The output is the stream information parsed by FFmpeg
+
