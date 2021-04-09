@@ -1,7 +1,7 @@
 Qt-CMake-HelloWorld
 ===================
 
-A Simple Qt5 Program Built with CMake 3.8.2
+A Simple Qt5 Program Built with CMake 3.8.2 that uses FFmpeg as dependency
 
 ## Building
 
