@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.8.2)
 
-project(helloworld)
+project(helloworld-ffmpeg)
+
+# Let CMake use files in cmake dir
+SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 # Find includes in the build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -29,8 +32,11 @@ endif()
 # Find the QtWidgets library
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
+# Find ffmpeg in the system using the file in cmake dir
+find_package(FFmpeg COMPONENTS AVCODEC AVFORMAT AVUTIL SWSCALE)
+
 # Tell CMake to create the helloworld executable
 add_executable(helloworld main.cpp mainwindow.cpp mainwindow.ui resources.qrc)
 
 # Add the Qt5 Widgets for linking
-target_link_libraries(helloworld Qt5::Widgets)
+target_link_libraries(helloworld Qt5::Widgets ${FFMPEG_LIBRARIES})
